@@ -1,7 +1,7 @@
 "use client"
 import { useEffect } from "react";
 
-export const Button = ({ title, style, className }) => {
+export const Button = ({ style, className, children }) => {
 
     // // Handle lifecycle hooks
     // useEffect(() => {
@@ -15,6 +15,6 @@ export const Button = ({ title, style, className }) => {
 
     // Return component
     return <button style={{ width: 200, ...style }} className={ "bg-orange-200 rounded p-2 hover:bg-sky-700 " + className }>
-        {title}
+        {children}
     </button>;
 }

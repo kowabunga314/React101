@@ -1,11 +1,20 @@
 import Image from "next/image";
-import { Button } from "./components/core";
+import { Button, Input } from "./components";
 
 export default function Home() {
   return (
     <div>
-      <Button title="Next" className="h-8" /> 
-      <Button title="Previous" style={{ marginLeft: 20 }} /> 
+      <div>
+        <Input isWrong={false} label="Enter username: " placeholder="Please write your username" className='mb-8 w-[400px]' /> 
+      </div>
+      <div>
+        <Button>
+          <span>Next</span>
+        </Button>
+        <Button style={{ marginLeft: 20 }}>
+          <h2>Previous</h2>
+        </Button> 
+      </div>
     </div>
   );
 }
