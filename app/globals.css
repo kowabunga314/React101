@@ -31,3 +31,13 @@ body {
     text-wrap: balance;
   }
 }
+
+.btn {
+  background-color: lightblue;
+  border-radius: 10px;
+  padding: 10px;
+  transition: 0.3s;
+}
+.btn:hover {
+  background-color: darkblue;
+}
