@@ -1,19 +1,22 @@
 import Image from "next/image";
-import { Button, Input } from "./components";
+import { StatBox, Title } from "../components";
 
 export default function Home() {
   return (
     <div>
       <div>
-        <Input isWrong={false} label="Enter username: " placeholder="Please write your username" className='mb-8 w-[400px]' /> 
+        <Title className="ml-4" value="Dashboard" />
       </div>
-      <div>
-        <Button>
-          <span>Next</span>
-        </Button>
-        <Button style={{ marginLeft: 20 }}>
-          <h2>Previous</h2>
-        </Button> 
+      <div className="flex flex-wrap">
+        <StatBox label='Total Customers' value='2500' className='ml-10 mt-4' />
+        <StatBox label='Total Products' value='1000' className='ml-10 mt-4' />
+        <StatBox label='Total Categories' value='100' className='ml-10 mt-4' />
+        <StatBox label='Average Revenue' value='$2500' className='ml-10 mt-4' />
+
+        <StatBox label='Total Customers' value='2500' className='ml-10 mt-4' />
+        <StatBox label='Total Products' value='1000' className='ml-10 mt-4' />
+        <StatBox label='Total Categories' value='100' className='ml-10 mt-4' />
+        <StatBox label='Average Revenue' value='$2500' className='ml-10 mt-4' />
       </div>
     </div>
   );
