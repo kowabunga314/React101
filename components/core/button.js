@@ -1,20 +1,8 @@
 "use client"
-import { useEffect } from "react";
+import { memo, useEffect } from "react";
 
-export const Button = ({ style, className, children }) => {
-
-    // // Handle lifecycle hooks
-    // useEffect(() => {
-    //     // Run on mount
-    //     alert('Welcome to the course!');
-    //     // Run on exit
-    //     return () => alert('I am leaving.');
-    // }, [
-    //     // Dependencies listed here update this component when changed
-    // ] );
-
-    // Return component
-    return <button style={{ width: 200, ...style }} className={ "bg-orange-200 rounded p-2 hover:bg-sky-700 " + className }>
+export const Button = memo(({ style, className, children, onClick }) => {
+    return <button onClick={onClick} style={{ width: 200, ...style }} className={ "bg-orange-200 rounded p-2 hover:bg-sky-700 " + className }>
         {children}
     </button>;
-}
+})

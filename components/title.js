@@ -1,8 +1,9 @@
 
-export const Title = ({ value, className }) => {
+export const Title = ({ value, color, className }) => {
     return (
         <h3
-            className={`text-lg font-bold text-orange-200 ${className}`}
+            style={{color: color}}
+            className={`text-lg font-bold ${className}`}
         >
             {value}
         </h3>

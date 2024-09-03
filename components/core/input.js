@@ -7,7 +7,7 @@ export const Input = ({ onChange, value, className, label, placeholder, isWrong 
                 onChange={onChange}
                 placeholder={placeholder}
                 value={value}
-                className='w-full p-2 rounded bg-blue-50 text-slate-600'
+                className={`w-full p-2 rounded text-slate-600 ${className}`}
             />
             { isWrong ? <p>Wrong username or password</p> : null }
         </div>

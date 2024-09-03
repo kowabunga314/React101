@@ -1,26 +1,37 @@
+"use client"
+
 import Image from "next/image";
-import { StatBox, Title } from "../components";
+import { Button, StatBox, Title, Input } from "../components";
+import { useState, useCallback } from "react";
 
 export default function Home() {
-  const data = [
-    {label: 'Total Customers', value: '2500'},
-    {label: 'Total Products', value: '1000'},
-    {label: 'Total Categories', value: '100'},
-    {label: 'Average Revenue', value: '$2500'},
-    {label: 'Total Customers', value: '2500'},
-    {label: 'Total Products', value: '1000'},
-    {label: 'Total Categories', value: '100'},
-    {label: 'Average Revenue', value: '$2500'}
-  ]
+  const [numOne, setNumOne] = useState(0)
+  const [numTwo, setNumTwo] = useState(0)
+  const [total, setTotal] = useState(0)
+
+  const onNumOneChange = (event) => {setNumOne(event.target.value)}
+  const onNumTwoChange = (event) => {setNumTwo(event.target.value)}
+  const calculateTotal = () => {setTotal(Number(numOne) + Number(numTwo))}
 
   return (
     <div>
+      <h1>
+        The result is: {total}
+      </h1>
       <div>
-        <Title className="ml-4" value="Dashboard" />
-      </div>
-      <div className="flex flex-wrap">
-        { data.map(el => <StatBox label={el.label} value={el.value} className='ml-10 mt-4' />) }
+        <input style={styles.input} onChange={onNumOneChange} value={numOne} />
+        <br />
+        <br />
+        <input style={styles.input} onChange={onNumTwoChange} value={numTwo} />
+        <br />
+        <br />
+        <Button onClick={calculateTotal} >Calculate</Button>
       </div>
     </div>
   );
+}
+
+const styles = {
+  btn: {},
+  input: { width: 100, color: 'grey', borderColor: 'red', borderWidth: 1, borderRadius: 10 }
 }
