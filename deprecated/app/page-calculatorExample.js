@@ -12,7 +12,9 @@ export default function Home() {
   // Set page state handlers
   const onNumOneChange = (event) => {setNumOne(event.target.value)}
   const onNumTwoChange = (event) => {setNumTwo(event.target.value)}
-  const calculateTotal = () => {setTotal(Number(numOne) + Number(numTwo))}
+  // const calculateTotal = () => {setTotal(Number(numOne) + Number(numTwo))}
+  const calculateTotal = useCallback(() => {setTotal(Number(numOne) + Number(numTwo))}, [numOne, numTwo])
+  console.log('RENDERING...')
 
   // Define page layout
   return (
@@ -27,7 +29,7 @@ export default function Home() {
         <input style={styles.input} onChange={onNumTwoChange} value={numTwo} />
         <br />
         <br />
-        <Button onClick={calculateTotal} >Calculate</Button>
+        <Button onClick={calculateTotal}>Calculate</Button>
       </div>
     </div>
   );
