@@ -1,20 +1,19 @@
 "use client"
 
 import { Button, StatBox, Title, Input } from "../components";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useMemo } from "react";
 
 export default function Home() {
   // Set page state variables
   const [numOne, setNumOne] = useState(0)
   const [numTwo, setNumTwo] = useState(0)
   const [total, setTotal] = useState(0)
+  const data = useMemo(() => {})
 
   // Set page state handlers
   const onNumOneChange = (event) => {setNumOne(event.target.value)}
   const onNumTwoChange = (event) => {setNumTwo(event.target.value)}
-  // const calculateTotal = () => {setTotal(Number(numOne) + Number(numTwo))}
   const calculateTotal = useCallback(() => {setTotal(Number(numOne) + Number(numTwo))}, [numOne, numTwo])
-  console.log('RENDERING...')
 
   // Define page layout
   return (
@@ -29,7 +28,7 @@ export default function Home() {
         <input style={styles.input} onChange={onNumTwoChange} value={numTwo} />
         <br />
         <br />
-        <Button onClick={calculateTotal}>Calculate</Button>
+        <Button onClick={calculateTotal} data={data}>Calculate</Button>
       </div>
     </div>
   );
