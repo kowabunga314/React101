@@ -1,4 +1,5 @@
 export * from './core'
 
 export { Title } from './title'
-import { StatBox } from './statBox'
+export { StatBox } from './statBox'
+export { AppSideBar } from './sideBar'
